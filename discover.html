@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover - Ullrich Scherer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #3b82f6;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --border-color: #e5e7eb;
+            --accent: #0ea5e9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #ffffff;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        h2 i {
+            color: var(--accent);
+        }
+
+        /* Content Section */
+        .content-box {
+            background-color: var(--bg-light);
+            padding: 2rem;
+            border-radius: 8px;
+            line-height: 1.8;
+            border-left: 4px solid var(--accent);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .content-box:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-box p {
+            margin-bottom: 1rem;
+        }
+
+        .content-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header .title {
+                font-size: 1.2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Ullrich Scherer</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="discover.html">University</a></li>
+                <li><a href="career.html">Career</a></li>
+                <li><a href="hobbies.html">Hobbies</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <h1>Discover Duluth</h1>
+            <p class="title">University of Minnesota Duluth</p>
+            <p>Exploring my path, experiences, and what makes this place special to me.</p>
+        </div>
+    </header>
+
+    <!-- Why You Chose This University Section -->
+    <section id="university">
+        <div class="container">
+            <h2><i class="fas fa-graduation-cap"></i> Why I Chose UMD</h2>
+            <div class="content-box">
+                <p>
+                    UMD had always been my first choice to continue my education for several reasons. From a young age I loved the city for its incredible natural beauty, small town feel with the big city luxuries, and the unbeatable hockey atmosphere.
+                    My father attended UMD as well, which made the decision even more special for me. Now I have the opportunity to bond with him over school sports and celebrate my achievements as I follow in his footsteps.
+                </p>
+                <p>
+                    Additionally, UMD's accredited busincess programs and supportive community environment aligned perfectly with my personal and professional goals. The university's commitment to fostering innovation and critical thinking made it an ideal place for me to grow both intellectually and personally.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Like About Duluth Section -->
+    <section id="duluth">
+        <div class="container">
+            <h2><i class="fas fa-map-marker-alt"></i> What I Love About Duluth</h2>
+            <div class="content-box">
+                <p>
+                    Duluth is an amazing place where gorgeous nature blends with a fantastic hockey environment. With breathtaking views throughout the year, the gorgeous Lake Superior shoreline serves as a breathtaking backdrop for campus life. The nearby woodlands, rugged landscape, and crystal-clear waterways establish a stimulating environment for outdoor enjoyment and education.
+                </p>
+                <p>
+                    In addition to its stunning natural surroundings, Duluth boasts a vibrant hockey culture that is ingrained in the local community. Every game at UMD's world-class hockey program is electrifying due to the fervent fan support. The city is a great spot for hockey fans because of its dedication to hockey greatness and the abundance of outdoor rinks and leagues. A distinct community that honors both athletic accomplishment and the beauty of our surroundings is created by the fusion of immaculate natural settings with a competitive hockey mentality.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Experiences and Campus Highlights Section -->
+    <section id="experiences">
+        <div class="container">
+            <h2><i class="fas fa-star"></i> Personal Experiences & Campus Highlights</h2>
+            <div class="content-box">
+                <p>
+                   There have been many special moments and worthwhile educational opportunities during my stay at UMD. Every experience I've had, from participating in academic endeavors to joining campus organizations, has aided in my intellectual and personal development.
+                </p>
+                <p>
+                    My current self has been molded by the friendships I've formed, the classes I've attended, and the obstacles I've surmounted. Every highlight, whether it's working with peers on projects or visiting the campus in different seasons, reinforces why I am appreciative of being a member of the UMD community.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.content-box').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

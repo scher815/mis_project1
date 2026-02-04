@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ullrich Scherer - Career Interests</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #3b82f6;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --border-color: #e5e7eb;
+            --accent: #0ea5e9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #ffffff;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .section-title i {
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+
+        /* Company Cards */
+        .companies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .company-card {
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .company-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 8px 24px rgba(14, 165, 233, 0.15);
+            transform: translateY(-5px);
+        }
+
+        /* Company Header */
+        .company-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .company-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .company-info h2 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.3rem;
+        }
+
+        .company-info .position {
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        /* Contact Information */
+        .contact-section {
+            background-color: var(--bg-light);
+            padding: 1.2rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-section h3 {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-section h3 i {
+            color: var(--accent);
+        }
+
+        .contact-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .contact-item {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .contact-item i {
+            color: var(--secondary-color);
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
+        /* Content Sections */
+        .content-subsection {
+            margin-bottom: 1.5rem;
+        }
+
+        .content-subsection h4 {
+            font-size: 1.05rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .content-subsection h4 i {
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+
+        .content-subsection p {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            line-height: 1.7;
+            margin-bottom: 0.5rem;
+        }
+
+        .content-subsection ul {
+            list-style: none;
+            padding: 0 0 0 1.5rem;
+        }
+
+        .content-subsection li {
+            margin-bottom: 0.6rem;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .content-subsection li:before {
+            content: "→";
+            position: absolute;
+            left: -1.2rem;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Skills Alignment */
+        .skills-alignment {
+            background-color: var(--bg-light);
+            padding: 1.2rem;
+            border-left: 4px solid var(--accent);
+            border-radius: 6px;
+            margin-top: 1rem;
+        }
+
+        .skills-alignment h4 {
+            margin-bottom: 1rem;
+        }
+
+        .skill-match {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .skill-match:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .skill-icon {
+            width: 35px;
+            height: 35px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+            font-size: 0.9rem;
+        }
+
+        .skill-match-text {
+            flex: 1;
+        }
+
+        .skill-match-text strong {
+            color: var(--primary-color);
+            display: block;
+            font-size: 0.9rem;
+        }
+
+        .skill-match-text span {
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header .title {
+                font-size: 1.1rem;
+            }
+
+            .companies-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .contact-details {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .company-card {
+            animation: slideIn 0.6s ease-out forwards;
+        }
+
+        .company-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand"><i class="fas fa-home"></i> Ullrich Scherer</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="discover.html">University</a></li>
+                <li><a href="career.html">Career</a></li>
+                <li><a href="hobbies.html">Hobbies</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <div class="header">
+        <div class="header-container">
+            <h1>Career Interests</h1>
+            <div class="title">Companies & Opportunities</div>
+            <p>Exploring career paths that align with my skills and aspirations</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <section>
+            <div class="section-title">
+                <i class="fas fa-briefcase"></i> Target Companies
+            </div>
+
+            <!-- Companies Grid -->
+            <div class="companies-grid">
+                <!-- Company 1 -->
+                <div class="company-card">
+                    <div class="company-header">
+                        <div class="company-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="company-info">
+                            <h2>UnitedHealth Group</h2>
+                            <div class="position">Analytics/IT Operations</div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="contact-section">
+                        <h3><i class="fas fa-phone"></i> Contact Information</h3>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Phone:</strong>
+                                    <div>(239) 293-3102</div>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Email:</strong>
+                                    <a href="mailto:emma_carlson@uhg.com">emma_carlson@uhg.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Location:</strong>
+                                    <div>9900 Bren Road East, Minnetonka, MN 55343</div>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-globe"></i>
+                                <div>
+                                    <strong>Careers:</strong>
+                                    <a href="https://careers.unitedhealthgroup.com" target="_blank">UnitedHealth Careers</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Why This Opportunity -->
+                    <div class="content-subsection">
+                        <h4><i class="fas fa-star"></i> Why I'm Interested</h4>
+                        <p>One of Minnesota's biggest corporations, UnitedHealth Group has a global presence and a strong commitment to enhancing the systems that impact the lives of millions of people. I'm curious about how big businesses make decisions that affect operational effectiveness and health outcomes using data and economic principles.                        </p>
+                        <ul>
+                            <li>Global impact on healthcare systems and outcomes</li>
+                            <li>Use of data and analytics in operational decisions</li>
+                            <li>Opportunity to contribute to meaningful solutions at scale</li>
+                        </ul>
+                    </div>
+
+                    <!-- Qualifications -->
+                    <div class="content-subsection">
+                        <h4><i class="fas fa-check-circle"></i> Why I'm Qualified</h4>
+                        <p>
+                            I can analyze data and comprehend the frameworks used by major corporations for decision-making because of my experience in economics. Additionally, I like learning about how computers and systems facilitate analytics, which is a skill set applicable to positions involving operational planning, data interpretation, or tech-focused analytics.
+                        </p>
+                        <ul>
+                            <li>Strong economics background with analytical focus</li>
+                            <li>Growing proficiency with computer systems and technology</li>
+                            <li>Interest in data-driven decision making and business operations</li>
+                            <li>Ability to understand complex organizational systems</li>
+                        </ul>
+                    </div>
+
+                    <!-- Skills Alignment -->
+                    <div class="skills-alignment">
+                        <h4><i class="fas fa-lightbulb"></i> Skills & Interests Alignment</h4>
+                        <div class="skill-match">
+                            <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
+                            <div class="skill-match-text">
+                                <strong>Economic Analysis</strong>
+                                <span>Understanding of economic trends and analytical reasoning for business decisions</span>
+                            </div>
+                        </div>
+                        <div class="skill-match">
+                            <div class="skill-icon"><i class="fas fa-database"></i></div>
+                            <div class="skill-match-text">
+                                <strong>Data Systems</strong>
+                                <span>Curiosity about data systems and information technology infrastructure</span>
+                            </div>
+                        </div>
+                        <div class="skill-match">
+                            <div class="skill-icon"><i class="fas fa-cogs"></i></div>
+                            <div class="skill-match-text">
+                                <strong>Operational Insight</strong>
+                                <span>Interest in how large organizations structure and optimize operations</span>
+                            </div>
+                        </div>
+                        <div class="skill-match">
+                            <div class="skill-icon"><i class="fas fa-rocket"></i></div>
+                            <div class="skill-match-text">
+                                <strong>Quantitative Thinking</strong>
+                                <span>Commitment to using data-driven insights for meaningful organizational outcomes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Company 2 -->
+                <div class="company-card">
+                    <div class="company-header">
+                        <div class="company-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <div class="company-info">
+                            <h2>Target Corporation</h2>
+                            <div class="position">Analytics/Operations/Technology</div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="contact-section">
+                        <h3><i class="fas fa-phone"></i> Contact Information</h3>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Phone:</strong>
+                                    <div>+1 (612) 304-6073</div>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Email:</strong>
+                                    <a href="https://corporate.target.com/careers" target="_blank">Visit Careers Page</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Location:</strong>
+                                    <div>1000 Nicollet Mall, Minneapolis, MN 55403</div>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-globe"></i>
+                                <div>
+                                    <strong>Website:</strong>
+                                    <a href="https://corporate.target.com/careers" target="_blank">Target Careers</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Why This Opportunity -->
+                    <div class="content-subsection">
+                        <h4><i class="fas fa-star"></i> Why I'm Interested</h4>
+                        <p>
+                            Target is a large Minnesota-based firm with a wide range of employment options, from technology and digital roles to corporate analytics and operations. Understanding markets, consumer behavior, and data-driven decision-making are all crucial there, which aligns well with my academic specialization in economics and interest in technology.
+                        </p>
+                        <ul>
+                            <li>Diverse career paths aligned with my interests</li>
+                            <li>Strong emphasis on analytics and data-driven decision-making</li>
+                            <li>Intersection of economics, technology, and business strategy</li>
+                        </ul>
+                    </div>
+
+                    <!-- Qualifications -->
+                    <div class="content-subsection">
+                        <h4><i class="fas fa-check-circle"></i> Why I'm Qualified</h4>
+                        <p>
+                            My education has given me the analytical skills and economic thinking I need for jobs requiring data analysis and business understanding. Additionally, I have a sincere interest in how software and technology help big business operations including internal systems, consumer analytics, and supply chain automation.
+                        </p>
+                        <ul>
+                            <li>Economics background focused on markets and consumer trends</li>
+                            <li>Interest in technology applications for business solutions</li>
+                            <li>Analytical mindset for interpreting data and market insights</li>
+                            <li>Strong learning ability and adaptability in fast-paced environments</li>
+                        </ul>
+                    </div>
+
+                    <!-- Skills Alignment -->
+                    <div class="skills-alignment">
+                        <h4><i class="fas fa-lightbulb"></i> Skills & Interests Alignment</h4>
+                        <div class="skill-match">
+                            <div class="skill-icon"><i class="fas fa-users"></i></div>
+                            <div class="skill-match-text">
+                                <strong>Market Understanding</strong>
+                                <span>Economics background geared toward understanding markets and consumer trends</span>
+                            </div>
+                        </div>
+                        <div class="skill-match">
+                            <div class="skill-icon"><i class="fas fa-computer"></i></div>
+                            <div class="skill-match-text">
+                                <strong>Technology Enthusiasm</strong>
+                                <span>Enthusiasm for computers, technology, and how they enable business solutions</span>
+                            </div>
+                        </div>
+                        <div class="skill-match">
+                            <div class="skill-icon"><i class="fas fa-chart-bar"></i></div>
+                            <div class="skill-match-text">
+                                <strong>Data Analytics</strong>
+                                <span>Ability to interpret data and derive actionable business insights</span>
+                            </div>
+                        </div>
+                        <div class="skill-match">
+                            <div class="skill-icon"><i class="fas fa-rocket"></i></div>
+                            <div class="skill-match-text">
+                                <strong>Growth Motivation</strong>
+                                <span>Motivation to learn and grow within roles that bridge economics and analytics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.company-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

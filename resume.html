@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ullrich Scherer - Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #3b82f6;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --border-color: #e5e7eb;
+            --accent: #0ea5e9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #ffffff;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .header-contact {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+            margin-top: 1rem;
+        }
+
+        .header-contact span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .main-content {
+            flex: 3;
+        }
+
+        .sidebar {
+            flex: 1;
+            background-color: var(--bg-light);
+            padding: 2rem;
+            border-radius: 8px;
+            height: fit-content;
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .section-title i {
+            color: var(--accent);
+            font-size: 1.3rem;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .education-item:last-child {
+            border-bottom: none;
+        }
+
+        .degree {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .school {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .graduation {
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
+        }
+
+        /* Experience */
+        .experience-item {
+            margin-bottom: 1.5rem;
+            padding: 1.2rem;
+            background-color: var(--bg-light);
+            border-left: 4px solid var(--accent);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transform: translateX(5px);
+        }
+
+        .job-title {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.05rem;
+        }
+
+        .company {
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-top: 0.2rem;
+        }
+
+        .job-dates {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
+        }
+
+        .job-description {
+            margin-top: 0.6rem;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-category {
+            padding: 1rem;
+            background-color: var(--bg-light);
+            border-radius: 6px;
+            border-left: 3px solid var(--secondary-color);
+        }
+
+        .skill-category h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* Achievements */
+        .achievement-item {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background-color: var(--bg-light);
+            border-radius: 6px;
+            border-left: 3px solid var(--accent);
+        }
+
+        .achievement-item:hover {
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        }
+
+        .achievement-title {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.3rem;
+        }
+
+        .achievement-detail {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Sidebar Content */
+        .sidebar-section {
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .sidebar-title {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sidebar-title i {
+            color: var(--accent);
+        }
+
+        .sidebar-item {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .sidebar-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .sidebar-label {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+        }
+
+        .sidebar-content {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        /* Download Button */
+        .download-section {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .download-btn:hover {
+            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header .title {
+                font-size: 1.1rem;
+            }
+
+            .header-contact {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            nav {
+                display: none;
+            }
+
+            .download-section {
+                display: none;
+            }
+
+            .container {
+                padding: 0;
+            }
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            animation: slideIn 0.5s ease-out forwards;
+        }
+
+        .section:nth-child(2) { animation-delay: 0.1s; }
+        .section:nth-child(3) { animation-delay: 0.2s; }
+        .section:nth-child(4) { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand"><i class="fas fa-home"></i> Ullrich Scherer</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="discover.html">University</a></li>
+                <li><a href="career.html">Career</a></li>
+                <li><a href="hobbies.html">Hobbies</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <div class="header">
+        <div class="header-container">
+            <h1>Ullrich M. Scherer</h1>
+            <div class="title">University of Minnesota Duluth</div>
+            <div class="header-contact">
+                <span><i class="fas fa-envelope"></i> umscherer@gmail.com</span>
+                <span><i class="fas fa-map-marker-alt"></i> Duluth, Minnesota</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-content">
+            <!-- Download Resume Button -->
+            <div class="download-section">
+                <a href="https://docs.google.com/document/d/1ujTFx6x1nu9I2_l7u5OsthDXHrYzT5S-/export?format=pdf" class="download-btn" download="Ullrich_Scherer_Resume.pdf" target="_blank">
+                    <i class="fas fa-download"></i> Download PDF Resume
+                </a>
+            </div>
+
+            <!-- Education Section -->
+            <div class="section">
+                <div class="section-title">
+                    <i class="fas fa-graduation-cap"></i> Education
+                </div>
+                <div class="education-item">
+                    <div class="degree">Current Studies - Sophomore</div>
+                    <div class="school">University of Minnesota Duluth</div>
+                    <div class="graduation"><i class="fas fa-calendar"></i> In Progress</div>
+                </div>
+                <div class="education-item">
+                    <div class="degree">High School Diploma</div>
+                    <div class="school">Thomas Jefferson Senior High School</div>
+                    <div class="graduation"><i class="fas fa-calendar"></i> Pre-K through 12th Grade</div>
+                </div>
+                <div class="education-item">
+                    <div class="degree">Bloomington Public Schools</div>
+                    <div class="school">Bloomington, Minnesota</div>
+                    <div class="graduation"><i class="fas fa-calendar"></i> Elementary & Middle School</div>
+                </div>
+            </div>
+
+            <!-- Experience Section -->
+            <div class="section">
+                <div class="section-title">
+                    <i class="fas fa-briefcase"></i> Experience
+                </div>
+                <div class="experience-item">
+                    <div class="job-title">Tire Installer</div>
+                    <div class="company">Costco - Eden Prairie, MN</div>
+                    <div class="job-dates"><i class="fas fa-calendar-alt"></i> April 2024 – Present</div>
+                    <div class="job-description">
+                        Install new tires and wheels on customer vehicles. Perform comprehensive tire maintenance including rotations, balancing, repairs, and cleaning. Provide welcoming customer service while adhering to Costco policies and safety regulations. Complete all work efficiently and safely.
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="job-title">Tire Technician</div>
+                    <div class="company">Discount Tire - Eden Prairie, MN</div>
+                    <div class="job-dates"><i class="fas fa-calendar-alt"></i> October 2023 – April 2024</div>
+                    <div class="job-description">
+                        Installed new tires and wheels with attention to detail. Performed tire maintenance including rotations, balancing, repairs, and cleaning. Followed safety guidelines and best practices while delivering friendly customer service.
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="job-title">Wait Staff / Supervisory Support</div>
+                    <div class="company">Summit Place Senior Living - Eden Prairie, MN</div>
+                    <div class="job-dates"><i class="fas fa-calendar-alt"></i> February 2023 – October 2023</div>
+                    <div class="job-description">
+                        Served meals to both Independent and Assisted living residents. Took on limited supervisory responsibilities managing other wait staff during mealtimes. Developed and executed dining plans based on resident sign-up information. Maintained clean and safe work environment while preparing for upcoming meal hours.
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="job-title">USA Hockey Mite Referee</div>
+                    <div class="company">USA Hockey</div>
+                    <div class="job-dates"><i class="fas fa-calendar-alt"></i> September 2019 – April 2020</div>
+                    <div class="job-description">
+                        Provided young hockey players with a safe, positive learning environment for the sport. Maintained cleanliness and organization of referee locker rooms. Ensured accountability for equipment and facilities.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="section">
+                <div class="section-title">
+                    <i class="fas fa-tools"></i> Skills & Competencies
+                </div>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h4>Professional Qualities</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Hard Worker</span>
+                            <span class="skill-tag">Quick Learner</span>
+                            <span class="skill-tag">Reliable</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Technical Skills</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Technology Proficient</span>
+                            <span class="skill-tag">Problem Solver</span>
+                            <span class="skill-tag">Logical Thinking</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Interpersonal Skills</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Customer Service</span>
+                            <span class="skill-tag">Sociable</span>
+                            <span class="skill-tag">Teamwork</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Work Experience</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Tire Installation</span>
+                            <span class="skill-tag">Maintenance</span>
+                            <span class="skill-tag">Supervisory Tasks</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Achievements Section -->
+            <div class="section">
+                <div class="section-title">
+                    <i class="fas fa-star"></i> Achievements & Highlights
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-title"><i class="fas fa-award"></i> Current Sophomore</div>
+                    <div class="achievement-detail">
+                        University of Minnesota Duluth - Pursuing higher education and continuing professional growth
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-title"><i class="fas fa-award"></i> Hockey Community Involvement</div>
+                    <div class="achievement-detail">
+                        USA Hockey Mite Referee - Contributed to youth hockey development and safety
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-title"><i class="fas fa-award"></i> Supervisory Experience</div>
+                    <div class="achievement-detail">
+                        Took on leadership responsibilities managing staff during mealtimes at Summit Place Senior Living
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-title"><i class="fas fa-award"></i> Progressive Career Development</div>
+                    <div class="achievement-detail">
+                        Rapid advancement from Wait Staff to Tire Technician to current Tire Installer role at Costco
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <!-- Location & Contact -->
+            <div class="sidebar-section">
+                <div class="sidebar-title">
+                    <i class="fas fa-map-marker-alt"></i> Location
+                </div>
+                <div class="sidebar-item">
+                    <div class="sidebar-content">
+                        Duluth, Minnesota
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education Details -->
+            <div class="sidebar-section">
+                <div class="sidebar-title">
+                    <i class="fas fa-school"></i> Education
+                </div>
+                <div class="sidebar-item">
+                    <div class="sidebar-label">Current</div>
+                    <div class="sidebar-content">UMD Sophomore</div>
+                </div>
+                <div class="sidebar-item">
+                    <div class="sidebar-label">High School</div>
+                    <div class="sidebar-content">Thomas Jefferson Senior High</div>
+                </div>
+            </div>
+
+            <!-- Work Expertise -->
+            <div class="sidebar-section">
+                <div class="sidebar-title">
+                    <i class="fas fa-cogs"></i> Expertise
+                </div>
+                <div class="sidebar-item">
+                    <div class="sidebar-content">
+                        <i class="fas fa-wrench"></i> Tire Installation & Service
+                    </div>
+                </div>
+                <div class="sidebar-item">
+                    <div class="sidebar-content">
+                        <i class="fas fa-headset"></i> Customer Service
+                    </div>
+                </div>
+                <div class="sidebar-item">
+                    <div class="sidebar-content">
+                        <i class="fas fa-users"></i> Team Leadership
+                    </div>
+                </div>
+                <div class="sidebar-item">
+                    <div class="sidebar-content">
+                        <i class="fas fa-hockey-puck"></i> Sports & Fitness
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interests -->
+            <div class="sidebar-section">
+                <div class="sidebar-title">
+                    <i class="fas fa-heart"></i> Interests
+                </div>
+                <div class="sidebar-item">
+                    <div class="sidebar-content">
+                        <i class="fas fa-hockey-puck"></i> Hockey
+                    </div>
+                </div>
+                <div class="sidebar-item">
+                    <div class="sidebar-content">
+                        <i class="fas fa-computer"></i> Technology
+                    </div>
+                </div>
+                <div class="sidebar-item">
+                    <div class="sidebar-content">
+                        <i class="fas fa-users"></i> Social Activities
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="sidebar-section">
+                <div class="sidebar-title">
+                    <i class="fas fa-link"></i> Navigation
+                </div>
+                <div class="sidebar-item">
+                    <a href="index.html" style="color: var(--secondary-color); text-decoration: none; font-weight: 500;">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="discover.html" style="color: var(--secondary-color); text-decoration: none; font-weight: 500;">
+                        <i class="fas fa-map"></i> Discover Duluth
+                    </a>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.experience-item, .achievement-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(10px)';
+            el.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
